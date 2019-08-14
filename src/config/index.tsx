@@ -1,6 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
+import { App } from "./App";
 
-const Hello = () => <div>Hello, World!</div>;
+declare let kintone: any;
 
-render(<Hello />, document.getElementById("main"));
+(function(PLUGIN_ID) {
+  console.log(PLUGIN_ID);
+  render(<App pluginId={PLUGIN_ID} />, document.getElementById("main"));
+})(kintone.$PLUGIN_ID);
